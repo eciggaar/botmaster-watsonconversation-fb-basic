@@ -1,0 +1,23 @@
+---
+declared-services:
+  conversation-service-basic:
+    label: conversation
+    plan: free
+  weather-service-basic:
+    label: weatherinsights
+    plan: Free-v2
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  name: watson-botmaster-basic
+  host: eci-watson-botmaster-basic
+  disk_quota: 512M
+  services:
+  - conversation-service-basic
+  - weather-service-basic
+  env:
+    WATSON_WORKSPACE_ID: <your_workspace_id>
+    FACEBOOK_PAGE_TOKEN: <your_facebook_page_token>
+    FACEBOOK_VERIFY_TOKEN: <your_facebook_verify_token>
+    FACEBOOK_APP_SECRET: <your_facebook_app_secret>
