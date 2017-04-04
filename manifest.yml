@@ -17,7 +17,7 @@ applications:
   - conversation-service-basic
   - weather-service-basic
   env:
-    WATSON_WORKSPACE_ID: <your_workspace_id>
-    FACEBOOK_PAGE_TOKEN: <your_facebook_page_token>
-    FACEBOOK_VERIFY_TOKEN: <your_facebook_verify_token>
     FACEBOOK_APP_SECRET: <your_facebook_app_secret>
+    FACEBOOK_VERIFY_TOKEN: <your_facebook_verify_token>
+    FACEBOOK_PAGE_TOKEN: <your_facebook_page_token>
+    WATSON_WORKSPACE_ID: <your_workspace_id>
