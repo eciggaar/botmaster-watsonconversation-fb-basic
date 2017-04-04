@@ -24,7 +24,7 @@ In order for Watson Conversation to integrate with Botmaster, the following cred
 ---
 1. Find your service within Bluemix and click to view the service details screen. Create a new Watson Conversation service in case you want to run your bot locally. If you wish to run the bot on Bluemix, the service will be created for you as part of the deployment process.
 
-  ![Find your service](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/services.png?raw=true)
+  ![Find your service](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/services.png)
 
 2. From this screen click the "Service Credentials" tab
 
