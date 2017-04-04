@@ -1,4 +1,4 @@
-# Watson Conversation basic bot using Botmaster framework
+# Getting started chatbot using Watson Conversation and the Botmaster framework
 <div align="center">
 Powered by <img src="http://botmasterai.com/documentation/latest/images/botmaster_light.svg" width="100"/>
 </div>
