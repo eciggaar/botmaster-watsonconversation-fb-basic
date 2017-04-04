@@ -24,11 +24,11 @@ In order for Watson Conversation to integrate with Botmaster, the following cred
 ---
 1. Find your service within Bluemix and click to view the service details screen. Create a new Watson Conversation service in case you want to run your bot locally. If you wish to run the bot on Bluemix, the service will be created for you as part of the deployment process.
 
-  ![Find your service](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/services.png?raw=true)
+  ![Find your service](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/services.png?raw=true)
 
 2. From this screen click the "Service Credentials" tab
 
-  ![Get workspace ID](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/servicecredentials.png?raw=true)
+  ![Get workspace ID](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/servicecredentials.png?raw=true)
 
 3. Copy the username and password information. We will use this later when connecting our conversation to Botmaster.
 
@@ -37,12 +37,12 @@ In order for Watson Conversation to integrate with Botmaster, the following cred
 1. Open the conversation instance you have created.
 2. In the service instance detail click "Launch Tool".
 
-  ![Launch tooling](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/launchtool.png?raw=true)
+  ![Launch tooling](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/launchtool.png?raw=true)
 
 3. Once in the Conversation tooling locate your conversation workspace. If you don't have a Conversation workspace yet, this the place where you have to create one.
 4. Click the menu located top right and select "View Details".
 
-  ![Get workspace ID](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/workspaceid.png?raw=true)
+  ![Get workspace ID](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/workspaceid.png?raw=true)
 
 5. Copy your workspace ID and make note (we will use this with service credentials to connect our Watson Conversation to Botmaster).
 
@@ -56,22 +56,22 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
 <a href="https://bluemix.net/deploy?repository=https://github.com/eciggaar/botmaster-watsonconversation-basic.git" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
 
 2. Log into Bluemix.
-3. Give you application a unique name (this will be the URL for the base of your webhook).
+3. Give you application a unique name. This will be the URL for the base of your webhook.
 4. Select the region, organization and space to deploy to.
 
-  ![Name your application](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/bluemixname.png?raw=true)
+  ![Name your application](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/bluemixname.png?raw=true)
 
 5. Once complete you will be presented with this screen, now you can click "Edit Code" if you wish to add additional functionality.
 
-  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/success.png?raw=true)
+  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/success.png?raw=true)
 
 6. Once successfully deployed, go to your Bluemix application dashboard and view your app.
 
-  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/appdetail.png?raw=true)
+  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/appdetail.png?raw=true)
 
 7. Select 'Runtime' followed by "Environment Variables".
 
-  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/envvar.png?raw=true)
+  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/envvar.png?raw=true)
 
 8. Populate these fields with the required information. The `FACEBOOK_VERIFY_TOKEN` is a token you define yourself, the other two Facebook variables are obtained by following the section *Connecting to Facebook* below.
 9. Hit "Save" to restart your application.
@@ -92,26 +92,26 @@ Finally, Step 3 in the instructions above will get you the `FACEBOOK_PAGE_TOKEN`
 
 # Getting started with Botmaster locally
 
-The best way to begin to utilize Botmaster is to run the app locally. This will allow you to customize the code if you so wish. If however you are happy with what is already included go ahead and skip to [Getting Started with Botmaster on Bluemix](#getting-started-with-botmaster-on-bluemix).
+The best way to begin to utilize Botmaster is to run the app locally. This will allow you to customize the code if you wish to. If however you are happy with what is already included go ahead and skip to [Getting Started with Botmaster on Bluemix](#getting-started-with-botmaster-on-bluemix).
 
 Begin by changing to the directory of this repository you have just cloned or downloaded.
 
-* This can be done via command line e.g `cd Desktop/Botmaster-FBMessenger-Watson `
+* This can be done via command line e.g `cd ~/botmaster-watsonconversation-basic`
 
-To customize your Botmaster framework, such as adding additional actions or API services find documentation here [Botmaster Documentation](http://botmasterai.com/)
+To customize your Botmaster framework, such as adding additional actions or API services, find more detailed instructions in the [Botmaster Documentation](http://botmasterai.com/).
 
 Otherwise lets get going!
 
 ## Connecting IBM Watson Conversation & Facebook Messenger
-You will notice within the repository files is a `manifest.yml` file. This file is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. For this, change the following lines with your information.
+You will notice within the repository files there is a `manifest.yml` file. This file is where we will enter our credentials to connect your application to IBM Watson Conversation and Facebook Messenger. For this, change the following lines with your information.
 
-![Environment Variables](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/env.png?raw=true)
+![Environment Variables](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/env.png?raw=true)
 
 
 ## Logging into Bluemix
-Bluemix is where we will host our application, therefore we will make use of the cloud foundry to help us manage and push the application.
+Bluemix is where we will host our application, therefore we will make use of the Cloud Foundry command line to help us manage and push the application.
 
-1. Open terminal or command prompt.
+1. Open a terminal or command prompt.
 2. Set the API endpoint of your Bluemix space.
 	* `cf api https://api.ng.bluemix.net` - US South
 	* `cf api https://api.eu-gb.bluemix.net` - UK
@@ -128,13 +128,13 @@ Bluemix is where we will host our application, therefore we will make use of the
 Once you have successfully logged in and targeted Bluemix you can now push your application to Bluemix.
 
 ## Pushing to Bluemix
-Once you have finished working on your application you can now push this to Bluemix to be hosted. Using the steps above login to Bluemix.
+Once you have finished working on your application you can now push this to Bluemix to be hosted. Using the steps above to login to Bluemix.
 
-1. Open terminal or command prompt.
+1. Open a terminal or command prompt.
 2. Login to Bluemix.
-2. Change directory to your repository using `cd yourrepository`.
+2. Change directory to your repository using `cd <yourrepository>`.
 3. Use the following command to push to Bluemix `cf push`.
-	* Note: Before you use cf push ensure you have edited the manifest.yml file. You will need to update lines **6** and **7** using the unique name of your application.
+	* Note: Before you use `cf push` ensure you have edited the `manifest.yml` file. You will need to update lines **13** and **14** using the unique name of your application.
 
 # Exporting Your Conversation
 If you wish to export your conversation in the raw .json format to share with others or backup, this can be achieved by following:
@@ -143,44 +143,29 @@ If you wish to export your conversation in the raw .json format to share with ot
 2. Locate your conversation service.
 3. Within your conversation service locate you conversation instance.
 
-  ![Conversation instance](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/instance.png?raw=true)
+  ![Conversation instance](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/instance.png?raw=true)
 
 4. Using the menu in the top right of the conversation instance.
 
-  ![Menu icon](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/menuicon.png?raw=true)
+  ![Menu icon](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/menuicon.png?raw=true)
 
 5. Click "Download as JSON".
 
-  ![Conversation instance](https://github.com/eciggaar/botmaster-watsonconversation/blob/master/readmeimages/instance.png?raw=true)
+  ![Conversation instance](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/instance.png?raw=true)
 
 # Connecting Third Party API
-Botmaster supports Third party API integration to enable the conversation of your bot to be enriched. Within the app.js you will see a pre included Weather API that makes use of IBM Weather Company Data.
+Botmaster supports Third party API integration to enable the conversation of your bot to be enriched. Within the `weather.js` middleware file you will see a pre-included Weather API that makes use of IBM Weather Company Data.
 
 This sample code is able to be adapted to call any API function that returns a .json response. This is outputted as a message to the user within the specified channel.
 
 ## Calling the API
-To invoke an API call, Botmaster requires a trigger. In this case we have set the API trigger within the watson.output.action json tag. We have set this within Watson conversation advanced dialog, when the specified node is reached by the user the action is triggered.
+To invoke an API call, your application may require a trigger. To do this, we've set an API trigger within the watson.output.context.action json tag. We have defined this within the Watson Conversation advanced dialog. Whenever the specified node is reached by the user, the action is triggered.
 
-In the example code we have set Watson Conversation to have the following output.
+See e.g. the botmaster-watsonconversation-flightbot repository for an example implementation of this.
 
-```
-{
-"action:"weather",
-"output":{
-	"text":"Hello World! Heres the weather!"
-	}
-}
-```
-
-Within Botmaster we have the app.js to recognise this action trigger using.
-
-```
-watsonUpdate.output.action === 'weather';
-
-```
 # Additional Links
 
-Botmaster Documentation : [Botmaster Documentation](https://botmasterai.com/)
+Botmaster Documentation : [Botmaster Documentation](http://botmasterai.com/)
 
 Facebook Messenger Webhook Reference : [Facebook Webhooks](https://developers.facebook.com/docs/messenger-platform/webhook-reference#setup)
 
