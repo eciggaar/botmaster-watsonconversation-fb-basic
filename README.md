@@ -59,11 +59,11 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
 3. Give your application a unique name. This will be the URL for the base of your webhook.
 4. Select the region, organization and space to deploy to.
 
-  <img src="https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/bluemixname.png?raw=true" height="780">
+  ![Name your application](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/bluemixname.png?raw=true)
 
 5. Once complete you will be presented with this screen. Now you can click "Edit Code" if you wish to add additional functionality.
 
-  <img src="https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/success.png?raw=true" height="780">
+  ![Success deployment](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/success.png?raw=true)
 
 6. Once successfully deployed, go to your Bluemix application dashboard and view your app.
 
