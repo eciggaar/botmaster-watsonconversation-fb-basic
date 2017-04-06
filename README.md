@@ -156,7 +156,7 @@ If you wish to export your conversation in the raw .json format to share with ot
 
 5. Click "Download as JSON".
 
-  ![Conversation instance](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/instance.png?raw=true)
+  ![Conversation instance](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/instance.png?raw=true = 470x281)
 
 # Connecting Third Party API
 Botmaster supports Third party API integration to enable the conversation of your bot to be enriched. Within the `weather.js` middleware file you will see a pre-included Weather API that makes use of IBM Weather Company Data.
