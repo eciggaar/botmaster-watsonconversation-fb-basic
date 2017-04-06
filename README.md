@@ -113,14 +113,14 @@ Bluemix is where we will host our application, therefore we will make use of the
     * `cf api https://api.ng.bluemix.net` - US South
     * `cf api https://api.eu-gb.bluemix.net` - UK<p/>
 3. Login to Bluemix using:<p/>
-  * `cf login`
-  * Enter your email address of your Bluemix account.
-  * Hit enter.
-  * Enter your password of your Bluemix Account (*it will appear your password is not typing*)
-  * Hit enter.<p/>
+    * `cf login`
+    * Enter your email address of your Bluemix account.
+    * Hit enter.
+    * Enter your password of your Bluemix Account (*it will appear your password is not typing*)
+    * Hit enter.<p/>
 4. Select your space following on screen prompt.<p/>
 5. To confirm and check which region, org and space is currently targeted type:<p/>
-  * `cf target`
+    * `cf target`
 
 Once you have successfully logged in and targeted Bluemix you can now push your application to Bluemix.
 
