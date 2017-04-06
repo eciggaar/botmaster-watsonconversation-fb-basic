@@ -152,9 +152,7 @@ If you wish to export your conversation in the raw .json format to share with ot
 
 3. Within your conversation service locate your workspace.
 
-4. Use the menu in the top right of your workspace and then click "Download as JSON".
-
-5. Click "Download as JSON".
+4. Use the menu in the top right of your workspace and click "Download as JSON".
 
   <img src="https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/instance.png?raw=true" width="350px">
 
