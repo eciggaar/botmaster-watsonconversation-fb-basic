@@ -103,7 +103,7 @@ To customize your Botmaster framework, such as adding additional actions or API 
 ## Connecting IBM Watson Conversation & Facebook Messenger
 You will notice within the repository files there is a `manifest.yml` file. This file is where we will enter our credentials to connect your application to IBM Watson Conversation and Facebook Messenger. For this, change the following lines with your information.
 
-![Environment Variables](https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/env.png?raw=true)
+<img src="https://github.com/eciggaar/botmaster-watsonconversation-basic/blob/master/readmeimages/env.png?raw=true" width="500">
 
 ## Logging into Bluemix
 Bluemix is where we will host our application, therefore we will make use of the Cloud Foundry command line to help us manage and push the application.
@@ -111,12 +111,12 @@ Bluemix is where we will host our application, therefore we will make use of the
 1. Open a terminal or command prompt.
 
 2. Set the API endpoint of your Bluemix space. The endpoints for the US region and the UK region are listed below.
-
+<p>
   * `cf api https://api.ng.bluemix.net` - US South
   * `cf api https://api.eu-gb.bluemix.net` - UK
   <p>
 3. Login to Bluemix using:
-
+<p>
 	* `cf login`
 	* Enter your email address of your Bluemix account.
 	* Hit enter.
@@ -140,7 +140,8 @@ Once you have finished working on your application you can now push this to Blue
 3. Change directory to your repository using `cd <your_repository>`.
 
 4. Use the following command to push to Bluemix `cf push`.
-  * Note: Before you use `cf push` ensure you have edited the `manifest.yml` file. You will need to update lines **13** and **14** using the unique name of your application.
+
+*Note*: Before you use `cf push` ensure you have edited the `manifest.yml` file. You will need to update lines **13** and **14** using the unique name of your application.
 
 # Exporting Your Conversation
 If you wish to export your conversation in the raw .json format to share with others or backup, this can be achieved by following:
