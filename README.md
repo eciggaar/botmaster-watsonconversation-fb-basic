@@ -110,7 +110,7 @@ Bluemix is where we will host our application, therefore we will make use of the
 
 1. Open a terminal or command prompt.
 
-2. Set the API endpoint of your Bluemix space.
+2. Set the API endpoint of your Bluemix space. The endpoints for the US region and the UK region are listed below.
 
   * `cf api https://api.ng.bluemix.net` - US South
   * `cf api https://api.eu-gb.bluemix.net` - UK
@@ -123,8 +123,7 @@ Bluemix is where we will host our application, therefore we will make use of the
 	* Enter your password of your Bluemix Account (*it will appear your password is not typing*)
 	* Hit enter.
   <p>
-4. Select your space following on screen prompt.
-
+4. Select your space following on screen prompt.<p>
 5. To confirm and check which region, org and space is currently targeted type:
 
 	* `cf target`
