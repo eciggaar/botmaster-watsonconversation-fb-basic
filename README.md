@@ -108,18 +108,18 @@ You will notice within the repository files there is a `manifest.yml` file. This
 ## Logging into Bluemix
 Bluemix is where we will host our application, therefore we will make use of the Cloud Foundry command line to help us manage and push the application.
 
-1. Open a terminal or command prompt.
-2. Set the API endpoint of your Bluemix space. The endpoints for the US region and the UK region are listed below.
+1. Open a terminal or command prompt.<p/>
+2. Set the API endpoint of your Bluemix space. The endpoints for the US region and the UK region are listed below.<p/>
   * `cf api https://api.ng.bluemix.net` - US South
-  * `cf api https://api.eu-gb.bluemix.net` - UK
-3. Login to Bluemix using:
+  * `cf api https://api.eu-gb.bluemix.net` - UK<p/>
+3. Login to Bluemix using:<p/>
   * `cf login`
   * Enter your email address of your Bluemix account.
   * Hit enter.
   * Enter your password of your Bluemix Account (*it will appear your password is not typing*)
-  * Hit enter.
-4. Select your space following on screen prompt.
-5. To confirm and check which region, org and space is currently targeted type:
+  * Hit enter.<p/>
+4. Select your space following on screen prompt.<p/>
+5. To confirm and check which region, org and space is currently targeted type:<p/>
   * `cf target`
 
 Once you have successfully logged in and targeted Bluemix you can now push your application to Bluemix.
