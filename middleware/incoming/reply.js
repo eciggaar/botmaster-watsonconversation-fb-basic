@@ -1,15 +1,7 @@
 const watson = require('watson-developer-cloud');
-const cfenv = require('cfenv');
-const appEnv = cfenv.getAppEnv();
-const watsonConversationStorageMiddleware = require('..//watson_conversation_storage');
-
-// Settings for Watson conversation service
-const watsonConversation = watson.conversation({
-    username: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_USERNAME : appEnv.getServiceCreds('conversation-service-basic').username,
-    password: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_PASSWORD : appEnv.getServiceCreds('conversation-service-basic').password,
-    version: 'v1',
-    version_date: '2017-02-03',
-});
+const config = require('../../config');
+const watsonConversationStorageMiddleware = require('../watson_conversation_storage');
+const watsonConversation = watson.conversation(config.watsonConversationCredentials);
 
 const replyToUser = {
   type: 'incoming',
