@@ -42,7 +42,7 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
 
 8. Populate these fields with the required information. The `FACEBOOK_VERIFY_TOKEN` is a token you define yourself, the other two Facebook variables are obtained by following the section *Connecting to Facebook* below.
 
-9. Follow the steps described in the [Getting Watson Conversation Credentials](#getting watson conversation credentials) section to obtain the `WATSON_WORKSPACE_ID`.
+9. Follow the steps described in the [Getting Watson Conversation Credentials](#getting-watson-conversation-credentials) section to obtain the `WATSON_WORKSPACE_ID`.
 
 10. Hit "Save" to restart your application.
 
