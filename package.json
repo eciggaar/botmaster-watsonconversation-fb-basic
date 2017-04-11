@@ -10,14 +10,13 @@
     "autofix": "eslint --fix ."
   },
   "author": "Edward Ciggaar",
-  "license": "ISC",
   "engines": {
     "node": "^6.9.5",
     "npm": "^3.10.10"
   },
   "dependencies": {
-    "request-promise": "^4.1.1",
-    "botmaster": "^2.2.4",
+    "botmaster": "^3.0.8",
+    "botmaster-messenger": "^1.0.1",
     "botmaster-fulfill": "^3.1.2",
     "botmaster-fulfill-actions": "^1.0.0",
     "cfenv": "^1.0.3",

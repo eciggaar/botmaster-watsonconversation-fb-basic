@@ -1,9 +1,7 @@
 const Botmaster = require('botmaster');
-const watson = require('watson-developer-cloud');
+const MessengerBot = require('botmaster-messenger');
 const cfenv = require('cfenv');
 const dotenv = require('dotenv');
-const request = require('request-promise');
-const incomingMiddleware = require('./middleware/incoming');
 const {fulfillOutgoingWare} = require('botmaster-fulfill');
 const actions = require('botmaster-fulfill-actions');
 const appEnv = cfenv.getAppEnv();
@@ -14,16 +12,8 @@ if (appEnv.isLocal) {
     dotenv.load();
 }
 
-// Variable used to keep state during the conversation
+const incomingMiddleware = require('./middleware/incoming');
 const watsonConversationStorageMiddleware = require('./middleware/watson_conversation_storage');
-
-// Settings for Watson conversation service
-const watsonConversation = watson.conversation({
-    username: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_USERNAME : appEnv.getServiceCreds('conversation-service-basic').username,
-    password: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_PASSWORD : appEnv.getServiceCreds('conversation-service-basic').password,
-    version: 'v1',
-    version_date: '2017-02-03',
-});
 
 // Set settings for Facebook messenger bot
 const messengerSettings = {
@@ -33,11 +23,11 @@ const messengerSettings = {
         fbAppSecret: process.env.FACEBOOK_APP_SECRET,
     },
     // !! see Readme if you have any issues with understanding webhooks
-    webhookEndpoint: '/webhook',
+    webhookEndpoint: 'webhook',
 };
 
 // Initialize messenger bot
-messengerBot = new Botmaster.botTypes.MessengerBot(messengerSettings);
+messengerBot = new MessengerBot(messengerSettings);
 
 const botmasterSettings = {
     port: appEnv.isLocal ? 3000 : appEnv.port,
@@ -45,41 +35,29 @@ const botmasterSettings = {
 
 // Define botmaster and add different bottypes (in this case only messenger)
 const botmaster = new Botmaster(botmasterSettings);
+
 botmaster.addBot(messengerBot);
 
 // Incoming middleware for botmaster to perform middleware tasks before update handler is entered.
-botmaster.use('incoming', watsonConversationStorageMiddleware.retrieveSession);
-botmaster.use('incoming', incomingMiddleware.weather.addWeatherInfoToUpdate);
-botmaster.use('incoming', {type: 'messenger'}, incomingMiddleware.userInfo.addUserInfoToUpdate);
-
-botmaster.use('incoming', (bot, update, next) => {
-    bot.sendIsTypingMessageTo(update.sender.id);
-    next();
+botmaster.use({
+  type: 'incoming',
+  name: 'retrieveSession',
+  controller: watsonConversationStorageMiddleware.retrieveSession
 });
 
-// Botmaster update handler.
-botmaster.on('update', (bot, update) => {
-    console.log(JSON.stringify(update));
+botmaster.use(incomingMiddleware.weather.addWeatherInfoToUpdate);
+botmaster.use(incomingMiddleware.userInfo.addUserInfoToUpdate);
+botmaster.use(incomingMiddleware.reply.replyToUser);
 
-    const messageForWatson = {
-        context: update.session.context,
-        workspace_id: process.env.WATSON_WORKSPACE_ID,
-        input: {
-            text: update.message.text,
-        }
-    };
-
-    watsonConversation.message(messageForWatson, (err, watsonUpdate) => {
-        watsonConversationStorageMiddleware.updateSession(update.sender.id, watsonUpdate);
-        const watsontext = watsonUpdate.output.text;
-        bot.sendTextCascadeTo(watsontext, update.sender.id);
-    });
-});
 
 // Botmaster outgoing middleware handlers
-botmaster.use('outgoing', fulfillOutgoingWare( {actions} ));
+botmaster.use({
+  type: 'outgoing',
+  name: 'fulfill-middleware',
+  controller: fulfillOutgoingWare({actions})
+});
 
-botmaster.on('server running', (message) => {
+botmaster.on('listening', (message) => {
     console.log(message);
 });
 

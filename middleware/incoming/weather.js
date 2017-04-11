@@ -1,7 +1,11 @@
 const appEnv = require('cfenv').getAppEnv();
 const request = require('request-promise');
 
-const addWeatherInfoToUpdate = function addWeatherInfoToUpdate(bot, update, next) {
+const addWeatherInfoToUpdate = {
+  type: 'incoming',
+  name: 'add-weather-to-update',
+  controller: (bot, update, next) => {
+
     let weatherUrl = (appEnv.isLocal) ? process.env.WEATHER_HOST : appEnv.getServiceCreds('weather-service-basic').host;
     weatherUrl = 'https://' + weatherUrl + '/api/weather/v1/geocode/52.34/4.83/forecast/daily/3day.json?units=m';
 
@@ -28,8 +32,9 @@ const addWeatherInfoToUpdate = function addWeatherInfoToUpdate(bot, update, next
     } else {
       next();
     }
+  }
 }
 
 module.exports = {
-    addWeatherInfoToUpdate, // using shorthand here
+  addWeatherInfoToUpdate
 }

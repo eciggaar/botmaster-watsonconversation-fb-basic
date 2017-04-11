@@ -17,9 +17,7 @@ function retrieveSession(bot, update, next) {
 function updateSession(userId, session) {
   // update or store the session for the first time.
   // the update is expected to be found in the message object
-  // for the platform. Because we don't need to send it over,
-  // we delete it after saving the session.
-
+  // for the platform. 
   store[userId] = session;
 }
 
