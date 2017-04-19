@@ -9,7 +9,7 @@ const replyToUser = {
   controller: (bot, update, next) => {
     bot.sendIsTypingMessageTo(update.sender.id, {ignoreMiddleware: true});
 
-    console.log(JSON.stringify(update));
+    console.log(JSON.stringify(update, null, 2));
 
     const messageForWatson = {
         context: update.session.context,

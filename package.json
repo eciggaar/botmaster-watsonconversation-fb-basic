@@ -15,6 +15,7 @@
     "npm": "^3.10.10"
   },
   "dependencies": {
+    "request-promise": "^4.2.0",
     "botmaster": "^3.0.8",
     "botmaster-messenger": "^1.0.1",
     "botmaster-fulfill": "^3.1.2",
