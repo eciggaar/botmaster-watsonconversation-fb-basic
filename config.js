@@ -24,17 +24,17 @@ const messengerCredentials = {
 
 // Settings for Watson conversation service
 const watsonConversationCredentials = {
-    username: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_USERNAME : appEnv.getServiceCreds('conversation-service-basic').username,
-    password: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_PASSWORD : appEnv.getServiceCreds('conversation-service-basic').password,
+    username: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_USERNAME : appEnv.getServiceCreds('conversation-service-messenger').username,
+    password: (appEnv.isLocal) ? process.env.WATSON_CONVERSATION_PASSWORD : appEnv.getServiceCreds('conversation-service-messenger').password,
     version: 'v1',
     version_date: '2017-02-03',
 };
 
 // Settings for IBM Weather Company Data service
 const weatherCredentials = {
-    username: (appEnv.isLocal) ? process.env.WEATHER_USERNAME : appEnv.getServiceCreds('weather-service-basic').username,
-    password: (appEnv.isLocal) ? process.env.WEATHER_PASSWORD : appEnv.getServiceCreds('weather-service-basic').password,
-    host: (appEnv.isLocal) ? process.env.WEATHER_HOST : appEnv.getServiceCreds('weather-service-basic').host
+    username: (appEnv.isLocal) ? process.env.WEATHER_USERNAME : appEnv.getServiceCreds('weather-service-messenger').username,
+    password: (appEnv.isLocal) ? process.env.WEATHER_PASSWORD : appEnv.getServiceCreds('weather-service-messenger').password,
+    host: (appEnv.isLocal) ? process.env.WEATHER_HOST : appEnv.getServiceCreds('weather-service-messenger').host
 };
 
 module.exports = {
