@@ -1,21 +1,20 @@
 ---
 declared-services:
-  conversation-service-basic:
+  conversation-service-messenger:
     label: conversation
     plan: free
-  weather-service-basic:
+  weather-service-messenger:
     label: weatherinsights
     plan: Free-v2
 applications:
 - path: .
   memory: 256M
   instances: 1
-  name: watson-botmaster-basic
-  host: eci-watson-botmaster-basic
+  name: watson-botmaster-messenger
   disk_quota: 512M
   services:
-  - conversation-service-basic
-  - weather-service-basic
+  - conversation-service-messenger
+  - weather-service-messenger
   env:
     FACEBOOK_APP_SECRET: <your_facebook_app_secret>
     FACEBOOK_VERIFY_TOKEN: <your_facebook_verify_token>
